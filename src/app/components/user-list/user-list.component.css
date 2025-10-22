@@ -1,6 +1,6 @@
 .user-list {
   max-width: 900px;
-  margin: 24px auto;
+  margin: 40px auto;
   padding: 0 16px;
   font-family: system-ui, sans-serif;
 }
@@ -58,7 +58,6 @@
   background: #fff;
   box-shadow: 0 1px 4px rgba(0,0,0,0.08);
   padding: 8px;
-  overflow: auto;
 }
 
 /* User card */

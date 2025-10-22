@@ -1,0 +1,28 @@
+<div class="user-list">
+  <header class="header">
+    <h2>User Directory</h2>
+    <p>NOTE: Search user and your search is saved in the URL.</p>
+  </header>
+
+  <div class="search-area">
+    <input
+      type="text"
+      [formControl]="searchControl"
+      placeholder="Search users by name..."
+      class="search-box" />
+    <button *ngIf="searchControl.value" type="button" (click)="searchControl.setValue('')">Clear</button>
+  </div>
+
+  <cdk-virtual-scroll-viewport itemSize="100" class="viewport">
+    <div *cdkVirtualFor="let user of filteredUsers()" class="user-row">
+      <div class="user">
+        <div class="name">{{ user.name }}</div>
+        <div class="email">{{ user.email }}</div>
+        <div class="company">{{ user.company?.name }}</div>
+      </div>
+    </div>
+    <div *ngIf="filteredUsers().length === 0" class="no-results">
+      No users found.
+    </div>
+  </cdk-virtual-scroll-viewport>
+</div>
